@@ -89,6 +89,30 @@ DOM.HTMLElement.prototype.insertAdjacentHTML = function(position, html) {
   }
 };
 
+// FIXES by backport jsdom https://github.com/assaf/zombie/issues/1031
+DOM.Element.prototype.getClientRects = function() {
+return {
+      bottom: 0,
+      height: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      width: 0
+    };
+};
+
+// FIXES by backport jsdom https://github.com/assaf/zombie/issues/1031
+DOM.Element.prototype.getBoundClientRects = function() {
+return {
+      bottom: 0,
+      height: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      width: 0
+    };
+};
+
 
 // Implement documentElement.contains
 // e.g., if(document.body.contains(el)) { ... }
