@@ -914,7 +914,7 @@ class Browser extends EventEmitter {
         return elem;
     }
 
-    const inputs = Array.from(this.querySelectorAll('input[type=submit],button'));
+    const inputs = Array.from(this.querySelectorAll('input[type=button],input[type=reset],input[type=submit],button'));
     for (let input of inputs) {
       if (input.name === selector)
         return input;
